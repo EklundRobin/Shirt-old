@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 page</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="js/script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Content here -->
+	<div class="colors w3-container w3-half w3-margin-top w3-card-4">
+
+		<div class="w3-header w3-light-gray w3-article">
+			<h3 class="w3-header">Design your own shirt</h3>
+		</div>
+
+			<!-- Color Selection -->
+		<div class="color-container">
+			<table class="color-selector">
+				<td id="red" class="w3-win-phone" onclick="red()"></td>
+				<td id="orange" onclick="orange()">
+				<td id="blue" onclick="blue()"></td>
+				<td id="green" onclick="green()"></td>
+				<td id="magenta" onclick="magenta()"></td>
+				<td id="gray" onclick="gray()"></td>
+				<td id="black" onclick="black()"></td>
+				<td id="white" onclick="white()"></td>
+			</table>
+		</div>
+
+
+			<!-- Here comes the RGB Sliders -->
+		<br />
+		<div class="color-sliders">
+			<label for="points">R</label>
+			<input type="text" value="0" id="r" min="0" max="255" onchange="updateTextInputR();">
+			<input type="range" id="rangeInputR" value="0" min="0" max="255" onchange="updateShirtColorSlider();"><br>
+
+			<label for="points">G</label>
+			<input type="text" value="0" id="g" min="0" max="255" onchagne="updateTextInputG();">
+			<input type="range" dat-controller="slider" id="rangeInputG" value="0" min="0" max="255" onchange="updateShirtColorSlider();"><br>	
+
+			<label for="points">B</label>
+			<input type="text" value="0" id="b" min="0" max="255" onchange="updateTextInputB();">
+			<input type="range" id="rangeInputB" value="0" min="0" max="255" onchange="updateShirtColorSlider();"><br>
+
+			<label for="points">Grayscale</label>
+			<input type="text" value="0" id="gt" min="0" max="255" onchange="updateGrayscale();">
+			<input type="range" id="gr" value="0" min="0" max="255" onchange="updateGrayscale(this.value);">
+
+		</div>
+
+
+			<!-- Here comes the input bars -->
+			<br />
+		<div class="color-input">
+				<!-- Image Color -->
+			<div class="hex-bars">
+				<input id="customCol" class="w3-input" type="text" placeholder="Enter Hex Code" onkeydown="customColor();">
+
+				<button id="submitColor" class="w3-btn w3-green w3-card" onclick="customColor()">Change Shirt Color
+				</button>
+			</div><br>
+				<!-- Text Value -->
+			<div class="hex-bars">
+
+				<input type="text" id="newText" class="w3-input" name="changeText" placeholder="Enter Text Here" onkeydown="newText();">
+
+				<button id="textButton" class="w3-btn w3-green w3-card" onclick="newText()">Change Text
+				</button>
+			</div><br>
+				<!-- Text Color -->
+			<div class="hex-bars">
+
+				<input id="Tcolor" type="text" class="w3-input" name="hex-color-txt" placeholder="Enter Hex Code for Text" onkeydown="textColor();">
+
+				<button id="ColorTextButton" class="w3-btn w3-green w3-card" onclick="textColor()">Change Text Color
+				</button><br>
+
+					<!-- How big shall the text be? -->
+			</div>
+
+
+		</div>
+
+		<!-- Italic & Bold -->
+
+		<div class="font-change">
+			<input class="w3-radio" type="checkbox" name="italic-text" id="IT" onclick="italicFont(this)"><i>Italic</i>
+			<input class="w3-radio" type="checkbox" name="bold-text" id="BT" onclick="boldFont(this)" value="Bold"><b>Bold</b>
+		</div>
+
+			<br>
+		<div class="font-stylizing">
+
+			<select class="" name="font-styles" onchange="changeFont();" id="fontStyles">
+
+			<option >Normal</option>
+			<option value="arial">Arial</option>
+			<option value="comic Sans">Comic Sans</option>
+			<option value="helvetica">Helvetica</option>
+			<option value="lucida Uni">Lucida Sans Unicode</option>
+			<option value="sans Serif">Sans Serif</option>
+			<option value="times New Roman">Times New Roman</option>
+			<option value="trebuchet">Trebuchet MS</option>
+			</select>
+
+			<input type="button" class="w3-button w3-green" onclick="changeFont();" value="Change Font">
+		</div>
+
+		<div class="font-stylizing">
+
+			<select class="" name="font-size" id="fontSize">
+
+			<option value="10px">10 Px</option>
+			<option value="20px">20 Px</option>
+			<option value="30px">30 Px</option>
+			<option value="40px">40 Px</option>
+			<option value="50px">50 Px</option>
+			<option value="60px">60 Px</option>
+			</select>
+
+			<input type="button" onclick="changeTextSize();" class="w3-button w3-green" value="Change text size">
+		</div>
+
+
+	</div>
+
+<div class="w3-container">
+	<div id="image">
+		<img name="img" src="img/shirt.png" id="shirt">
+		<div class="image-text">
+			<p id="text">Lorem Ipsum</p>
+		</div>
+	</div>
+
+<br><br>
+
+<button class="w3-button w3-red w3-jumbo buy-btn">
+	Buy Now
+</button>
+
+</div>
+</body>
+</html>
